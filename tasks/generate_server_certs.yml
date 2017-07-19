@@ -19,7 +19,7 @@
 - name: Add alt name to extfile
   lineinfile:
     dest: "{{ dds_extfile }}" 
-    line: "subjectAltName = IP:{{ dds_host }},IP:127.0.0.1"
+    line: "subjectAltName = {{dd_ips}}"
 
 - name: Create the server certificate 
   command: "openssl x509 -req -days 365 -sha256 -in {{ dds_temp_path }}/server.csr -CA {{ dds_temp_path }}/ca.pem -CAkey {{ dds_temp_path }}/ca-key.pem -CAcreateserial -out {{ dds_temp_path}}/server-cert.pem -extfile {{ dds_temp_path}}/extfile.cnf -passin file:{{ dds_passphrase_file }}"
