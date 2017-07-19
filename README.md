@@ -56,6 +56,9 @@ dds_organization
 dds_host 
 > The host name or IP address used to access the Docker daemon. Defaults to '127.0.0.1'.
 
+dds_ips
+> The ip list in format 'IP:127.0.01,IP:127.0.02'
+
 dds_passphrase
 > A password used to secure key files. Defauts to 'Phrase123!'.
 
